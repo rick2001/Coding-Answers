@@ -1,3 +1,5 @@
+
+# printing all the subsequences + total no of subsequences
 def subsequence(index, array, emptyarr, count):
     if index == len(array):
         print(emptyarr)
