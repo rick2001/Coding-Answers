@@ -1,6 +1,6 @@
 # print all the subsequences whose summation is "k";
 
-# way-1
+# way-1 (This method is not as optimized as 2nd method. because here all the recursions are performed till index reaches length of the array.
 def recursion_on_subsequences(index,array,empty_array, final_arr, count,k):
     if index == len(array):
         if count == k:
@@ -32,8 +32,8 @@ print(final_arr)
 
 
 
-# way-2
-
+# way-2 (This is most optimized than the previous method. Here no of recursion calls are less as a condition is given. so technically the time complexity is less 
+# here all the recursions are not preformed if the target condition are not satisfied.
 def recursion_on_subsequences(index,array,empty_array, final_arr,target):
     if index == len(array):
         if  target == 0:
