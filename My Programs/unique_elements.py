@@ -35,6 +35,7 @@ def unique_elements(array,array_length):
                 continue
             else:
                 stack.append(array[i])
+                top+=1
     return stack
 array = [2,2,2,2,2,2,22,2,24,2,2,2]
 array_length = len(array)-1
