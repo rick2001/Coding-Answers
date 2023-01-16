@@ -1,3 +1,5 @@
+# -> print the maximum subarray sum along with the subarray.
+
 def solution(nums):
     maxi=nums[0]
     start=None
