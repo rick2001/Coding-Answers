@@ -1,4 +1,5 @@
-#insertionsort (iterative apprach)
+#insertionsort (iterative approach)
+# This algorithm takes an element and places it in its correct order. it starts from the begining
 def insertion(arr):
     for i in range(1,len(arr)):
         key=arr[i]
