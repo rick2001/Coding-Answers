@@ -1,7 +1,7 @@
 class Solution(object):
     def generate(self, numRows):
         mainlist=[[1]]
-        for i in range(numRows-1):
+        for i in range(numRows-1):   # deducting 1 as because in mainarray already one row is present
             temparray = [0] + mainlist[-1] + [0]
             row=[]
             for j in range(len(mainlist[-1])+1):
