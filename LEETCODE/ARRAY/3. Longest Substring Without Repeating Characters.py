@@ -1,3 +1,22 @@
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        int left=0, right=0;
+        int maximum=0;
+        Map<Character, Integer> hashMap=new HashMap<>();
+        while(right<s.length()){
+            if(hashMap.containsKey(s.charAt(right))){
+                left=Math.max(hashMap.get(s.charAt(right))+1, left);
+            }
+            hashMap.put(s.charAt(right), right);
+            maximum=Math.max(maximum, right-left+1);
+            right++;
+        }
+        return maximum;
+    }
+}
+
+
+
 class Solution(object):
     def lengthOfLongestSubstring(self, s):
         # s-> string
@@ -18,7 +37,7 @@ class Solution(object):
             right+=1
         return maxi
         
-        #Optimized
+        #Optimized (Python)
         # T.C-> O(2N)
         # S.C-> O(N)
 #         if len(s)==0:
@@ -37,3 +56,30 @@ class Solution(object):
 #                 hasharray.append(s[r])
 #                 maxi=max(maxi,r-left+1)
 #         return maxi
+
+#Optimized (Java)
+        # T.C-> O(2N)
+        # S.C-> O(N)
+# class Solution {
+#     public int lengthOfLongestSubstring(String s) {
+#         int left=0, right=0; 
+#         int maximum=0;
+#         Set<Character> hashSet=new HashSet<>();
+#         while(right<s.length()){
+#             if(hashSet.contains(s.charAt(right))){
+#                 while(left<right && hashSet.contains(s.charAt(right))){
+#                     hashSet.remove(s.charAt(left));
+#                     left++;
+#                 }
+#                 hashSet.add(s.charAt(right));
+#             }
+#             else{
+#                 hashSet.add(s.charAt(right));
+#                 maximum=Math.max(maximum, right-left+1);
+#             }
+#             right++;
+#         }
+#         return maximum;
+        
+#     }
+# }
